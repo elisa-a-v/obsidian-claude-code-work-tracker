@@ -2,6 +2,17 @@
 
 A template for tracking your daily work, built with [Obsidian](https://obsidian.md/) and [Claude Code](https://docs.anthropic.com/en/docs/claude-code). It works as an externalized working memory — a place to offload what you're doing, what you've done, and what's next, so you don't have to hold it all in your head.
 
+## Contents
+
+- [The problem this solves](#the-problem-this-solves)
+- [How it works](#how-it-works) — daily log, routines, task board
+- [What the AI does](#what-the-ai-does) — session logging, briefings, executive function support
+- [What a day looks like](#what-a-day-looks-like)
+- [Getting started](#getting-started)
+- [What's in this repo](#whats-in-this-repo)
+- [The energy tracking system](#the-energy-tracking-system)
+- [See it in action](#see-it-in-action) — screenshots
+
 ## The problem this solves
 
 If you've ever finished a work day feeling like you didn't accomplish anything (even when you did), or spent the first hour of the morning trying to remember where you left off, or felt paralyzed by too many things competing for your attention — this system is for that.
@@ -103,3 +114,15 @@ setup.md                — Full setup and configuration guide
 The `CLAUDE.md` file includes a "spoons" field that tracks current energy level: none, low, normal, or high. The morning briefing checks this and adjusts its behavior — on low-energy days, the AI is more directive and asks fewer questions. On high-energy days, it's more collaborative. The value gets updated at the start of each work day.
 
 This is based on [spoon theory](https://en.wikipedia.org/wiki/Spoon_theory) — a way of thinking about limited energy as a finite daily resource. The system doesn't fix low-energy days, but it reduces the overhead of getting through them.
+
+## See it in action
+
+### Daily note in Obsidian
+Meetings, deadlines, to-dos, and worklog in one place.
+
+![Daily note in Obsidian](screenshots/daily-note.png)
+
+### Morning briefing in Claude Code
+Yesterday's summary, pending reviews, and a suggestion for what to start with.
+
+![Morning briefing in Claude Code](screenshots/morning-briefing.png)
