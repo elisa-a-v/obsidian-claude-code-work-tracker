@@ -1,0 +1,9 @@
+# Obsidian config (user-specific)
+.obsidian/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Trash
+.trash/
