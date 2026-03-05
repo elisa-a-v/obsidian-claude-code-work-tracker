@@ -30,7 +30,11 @@ The system is built on four things:
 
 ### 1. A daily log
 
-Every work day has a file. You write down what you did as you do it — PRs reviewed, issues worked on, meetings, decisions. Nothing fancy, just a running list. At the end of the day, this becomes proof of work and a reference for tomorrow.
+Every work day has two files: a detailed session log, and a daily note.
+
+The session log captures things as they happen — PRs reviewed, issues worked on, meetings, decisions. Nothing fancy, just a running list. At the end of the day, it becomes proof of work and a reference for tomorrow.
+
+The daily note shows the day at a glance: meetings, deadlines, a todo checklist, and a summary of the work done.
 
 ### 2. A start-of-day routine
 
