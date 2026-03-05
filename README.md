@@ -19,8 +19,9 @@ If you've ever finished a work day feeling like you didn't accomplish anything (
 
 It gives you:
 
-- **Proof of work** — so you can stop second-guessing whether you were productive
-- **Context continuity** — so you don't waste energy reconstructing where you left off every morning
+- **Proof of work** — so you can stop second-guessing whether you were productive, and so you have receipts when you need them (standups, 1-1s, performance reviews)
+- **Context continuity** — so you don't waste energy reconstructing where you left off every morning. Claude conversations end, but session logs carry context forward across conversations and across days.
+- **Knowledge that compounds** — observations captured in passing become reusable later. Patterns noticed during code reviews can turn into team documentation. For example, [this commit](https://github.com/freelawproject/courtlistener/commit/5a4cd923) drew on months of session logs to produce a frontend guide that would have been impossible to write from memory alone. The system remembers what you'd otherwise forget.
 - **A place for "not right now"** — so things stop crowding your head while you focus on what's in front of you
 - **Help deciding what's next** — especially on days when everything feels equally urgent or equally unimportant
 
