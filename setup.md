@@ -10,10 +10,10 @@ This guide walks you through setting up the work tracking system from scratch.
 
 ## 1. Create your vault
 
-Fork or clone this repo, then open the directory as an Obsidian vault:
+This repo is set up as a [GitHub template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template). Create a new repo from it (or clone it directly), then open it as an Obsidian vault:
 
-1. Clone the repo: `git clone <this-repo-url> ~/my-work-vault`
-2. Open Obsidian → "Open folder as vault" → select the cloned directory
+1. Click **"Use this template"** on the repo page to create your own copy, then clone it: `git clone <your-repo-url> ~/my-work-vault`
+2. Open Obsidian → "Open folder as vault" → select the directory
 3. When prompted about community plugins, enable them (you'll install them next)
 
 ## 2. Install Obsidian plugins

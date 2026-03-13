@@ -11,6 +11,8 @@ A template for tracking your daily work, built with [Obsidian](https://obsidian.
 - [Getting started](#getting-started)
 - [What's in this repo](#whats-in-this-repo)
 - [The energy tracking system](#the-energy-tracking-system)
+- [Making it yours](#making-it-yours) — customization, extending plugins
+- [Contributing](#contributing)
 - [See it in action](#see-it-in-action) — screenshots
 
 ## The problem this solves
@@ -77,7 +79,7 @@ The whole thing takes maybe 5-10 minutes of overhead per day for the routines. T
 See **[setup.md](setup.md)** for the full installation and configuration guide.
 
 Quick version:
-1. Fork/clone this repo and open it as an Obsidian vault
+1. [Create a new repo from this template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) (or clone it directly) and open it as an Obsidian vault
 2. Install required plugins (Templater, Dataview, Kanban, Periodic Notes)
 3. Configure the plugins (see setup.md for exact settings)
 4. Copy the `skills/` directory to `~/.claude/skills/`
@@ -119,6 +121,26 @@ setup.md                — Full setup and configuration guide
 The `CLAUDE.md` file includes a "spoons" field that tracks current energy level: none, low, normal, or high. The morning briefing checks this and adjusts its behavior — on low-energy days, the AI is more directive and asks fewer questions. On high-energy days, it's more collaborative. The value gets updated at the start of each work day.
 
 This is based on [spoon theory](https://en.wikipedia.org/wiki/Spoon_theory) — a way of thinking about limited energy as a finite daily resource. The system doesn't fix low-energy days, but it reduces the overhead of getting through them.
+
+## Making it yours
+
+This is a template, not a prescription — it's meant to be adapted to how you work. Here's what you can change:
+
+- **`CLAUDE.md`**: The `[CUSTOMIZE]` placeholders are just the starting point. You can change how Claude communicates with you, what gets logged, what the morning briefing covers, how directive or collaborative it is. This file is the main lever for shaping the system's behavior.
+- **Skills**: The three included routines (morning briefing, session log, end of day) can be modified or replaced entirely. You can also write new skills for workflows that repeat in your work — weekly reviews, PR checklists, sprint planning, whatever makes sense for you.
+- **Templates**: Change what daily notes, meeting notes, or task notes look like. Add fields, remove sections, restructure to match how you think.
+- **Vault structure**: Add folders, rename things, reorganize. The structure in this repo is one way to do it, not the only way.
+- **Plugins**: The four Obsidian plugins listed in this repo are the foundation, but Obsidian has a large plugin ecosystem and adding more is straightforward. If you need calendars, charts, custom views, or integrations with other tools, there's probably a plugin for it.
+
+A good way to figure out what to change: ask Claude. Open a conversation in the vault, describe how you work and what's not clicking, and brainstorm together. It already has context from `CLAUDE.md` and the skill definitions, so it can suggest concrete modifications rather than generic advice.
+
+## Contributing
+
+This is a small project that has made my life immensely easier, and I'd love for it to be useful for others as well. If you're using it (or are trying to use it) I want to hear from you!
+
+**[Discussions](https://github.com/elisa-a-v/obsidian-claude-code-work-tracker/discussions)** is the best starting point. Use it for questions, ideas, showing how you adapted the system, or just saying what's working and what isn't. You don't need to have built anything to participate — "I tried setting this up and got stuck on X" is genuinely helpful.
+
+**Pull requests** are welcome for improvements to templates, skills, docs, or examples. When you open one, please describe what you changed, why, and how you've been using the system — the most useful contributions come from real experience with the workflow, not from reading the repo in isolation. AI-assisted contributions are obviously fine (look at the project), but the idea behind the change should come from actually using it.
 
 ## See it in action
 
