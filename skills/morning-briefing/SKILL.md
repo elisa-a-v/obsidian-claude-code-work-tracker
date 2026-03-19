@@ -86,10 +86,12 @@ Help the user start their work day by orienting them on where they left off and 
    - MUST tell the user where to find it
 
    **Standup framing guidance:**
+   - Only include work visible to the team (PRs, issues, code reviews, feature work). Exclude: internal planning, personal tooling/workflow tweaks, vault management
    - Keep it simple — only what the team needs to know
    - 2-4 items max per section; combine related work into single lines
    - Short descriptions — brief outcome, not a detailed breakdown
    - Frame in terms of outcomes/impact, not activities
+   - Consider audience context — what matters to the team vs what only matters to you
    - Before finalizing, check for gaps or stale info. If uncertain about something specific, ask ONE focused, easy-to-answer question rather than guessing
 
 ## Tone
