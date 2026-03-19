@@ -27,7 +27,7 @@ Help the user close out their work day by capturing what was done and setting up
    - Today's daily note is at: `daily/YYYY/MM/YYYY-MM-DD.md`
    - The Worklog section uses bullet points
    - MUST use `[#123](url)` format for all PR and issue references — never bare `#123`
-   - The worklog captures highlights; the session log has full detail. Use judgement about what's worth calling out.
+   - The worklog captures highlights; the session log has full detail. Use judgement about what's worth calling out — new issues opened, decisions made, or significant outcomes matter more than routine review details.
    - SHOULD include: PRs opened/reviewed/merged, issues worked on, meetings attended, blockers encountered
    - SHOULD offer to update the file directly or provide text to copy
 
