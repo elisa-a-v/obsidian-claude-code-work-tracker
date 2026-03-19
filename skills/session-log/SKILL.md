@@ -33,7 +33,12 @@ Capture what we've worked on in this session so it persists across sessions and 
 
      ---
      ```
-   - MUST insert a new entry in chronological position with timestamp: `## HH:MM`
+   - **Timestamp procedure** (MUST follow exactly):
+     1. Run `date '+%H:%M'` and use the exact result — MUST NOT round or approximate
+     2. Read the existing file and identify all `## HH:MM` entry timestamps
+     3. Compare the new timestamp against existing ones to find the correct insertion point
+     4. If the new timestamp is later than all existing entries, append after the final `---`
+     5. If inserting between existing entries, place after the `---` that follows the earlier entry
    - SHOULD include sections as relevant:
      - **Worked on**: Brief summary of tasks/topics
      - **Files touched**: List of files created/edited/reviewed
