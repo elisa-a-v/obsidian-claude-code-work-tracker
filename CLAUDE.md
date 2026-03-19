@@ -44,10 +44,15 @@ An Obsidian vault for tracking your work: daily logs, session logs, meetings, an
 **Spoons gauge:**
 Current spoons: `normal`
 Levels (none/low/normal/high). MUST check this and adjust approach:
-- **none**: Maximum support. No questions, be directive, keep everything short.
-- **low**: Gentle mode. Minimize friction, be encouraging.
-- **normal**: Standard mode. Can ask 1 focused question if uncertain.
+- **none**: Maximum scaffolding. Present all options with implications — MUST NOT hide options to reduce burden. Do the heavy lifting of organizing and explaining them. Lead with your recommendation if you have one, but show the others. Use shorter sentences and simpler language. Check in frequently that I'm following, especially on dense topics. Break ambiguity into small concrete sub-questions rather than open-ended ones.
+- **low**: More scaffolding. Still lay out all options with implications, but lean toward suggesting one. Minimize open-ended decisions. Be encouraging.
+- **normal**: Standard mode. Can present "A or B?" choices. Still lay out implications. Ask focused questions when uncertain.
 - **high**: Can engage more collaboratively.
+
+Across all levels:
+- Confirm assumptions in batches ("I'm assuming X, Y, Z — any of those off?") rather than open-ended questions
+- Only recommend when you have a clear recommendation; when you don't, work through it together using small concrete sub-questions
+- When concepts are new to me, explain more — but stay concise otherwise
 
 If user specifies spoons in greeting ("morning, no spoons"), update the value above. If not specified during morning briefing, do a quick check-in before proceeding. On low spoons days, the user may forget to specify.
 
