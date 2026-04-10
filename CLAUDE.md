@@ -19,6 +19,11 @@
 - **GitHub**: [CUSTOMIZE: Your GitHub username]
 - **Project board**: [CUSTOMIZE: Your project board URL, or remove if not applicable]
 
+**Today's goals:**
+<!-- CUSTOMIZE: This section is updated by the morning briefing skill each day.
+     It starts with a placeholder — the briefing replaces it with concrete goals. -->
+1. [Morning briefing will fill this in]
+
 ## What This Is
 
 An Obsidian vault for tracking your work: daily logs, session logs, meetings, and tasks. Not a codebase.
@@ -30,8 +35,13 @@ An Obsidian vault for tracking your work: daily logs, session logs, meetings, an
 - `tasks/` - Kanban board (`Tasks.md`) + task notes for items that need more than a checkbox
 - `meetings/` - Meeting notes
 - `templates/` - Templater templates (handles note creation)
+<!-- CUSTOMIZE: Add directories as your needs grow. Common additions:
+- `issues/<project>/` - Notes on GitHub issues that need more than a checkbox
+- `study topics/` - Research and learning materials -->
 
-**Skills location**: Custom skills (morning-briefing, end-of-day, session-log) live in `~/.claude/skills/`, not in the vault.
+**Skills location**: There are two ways to set up skills:
+1. **Simple**: Copy skills to `~/.claude/skills/`. Claude Code finds them automatically.
+2. **Vault-integrated**: Keep skills in a `claude/skills/` directory inside the vault, then symlink: `ln -s claude/skills .claude/skills`. This way skills are version-controlled with the vault and sync via Obsidian Sync if you use multiple devices.
 
 ## How to Work With You
 
@@ -108,6 +118,10 @@ All repos live under `~/projects/`. When you need to code, review PRs, or do any
 - Each repo has its own CLAUDE.md with project-specific technical context
 - The agent handles the coding; this vault keeps your workflow context and session logs
 - MUST use `gh` CLI for GitHub operations (PRs, issues, etc.) instead of WebFetch
+
+**Token conservation**:
+- **Testing**: MUST NOT run tests via agents. Instead, provide the command for user to run manually.
+- **Sub-agents**: SHOULD specify `model: "haiku"` for simple tasks that don't need opus/sonnet. Delegating exploratory work to sub-agents keeps large read results out of the main context.
 
 Repos:
 - `your-project` - [CUSTOMIZE: Brief description]
