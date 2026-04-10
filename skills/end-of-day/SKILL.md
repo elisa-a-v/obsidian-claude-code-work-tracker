@@ -59,11 +59,10 @@ Help the user close out their work day by capturing what was done and setting up
    - MUST check `git status` in the vault directory
    - If there are uncommitted changes, MUST ask: "Ready to commit today's vault changes?"
    - If confirmed:
-     <!-- CUSTOMIZE: The commands below assume standard git. If you use aliases,
-          adjust accordingly (e.g., `git add -p` for interactive staging,
-          `git commit -m "..."` for committing). -->
-     - MUST prompt user to stage changes (e.g., `git add -p` for interactive staging, or `git add <files>`)
-     - MUST wait for them to finish staging
+     <!-- CUSTOMIZE: The commands below assume standard git. If you use aliases
+          (e.g., `git ctm` for commit), adjust accordingly. -->
+     - MUST stage files directly with `git add` (don't ask user to run `git add -p`)
+     - MUST show `git diff --staged --stat` for confirmation before committing
      - SHOULD suggest a brief summary based on today's work (don't ask, just propose one)
      - MUST use `git commit -m "EOD: YYYY-MM-DD - <summary>"` to commit
    - If no changes, SHOULD skip this step silently
