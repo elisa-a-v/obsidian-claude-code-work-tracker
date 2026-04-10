@@ -1,0 +1,45 @@
+#!/usr/bin/env python3
+"""Fetch project board items assigned to you from GitHub Projects.
+
+Uses per-status queries to avoid the default 30-item pagination limit
+that can cause items to be silently dropped.
+
+CUSTOMIZE: Replace USERNAME, PROJECT, and ORG with your values.
+"""
+
+import json
+import subprocess
+import sys
+
+# CUSTOMIZE: Set these to match your project board
+USERNAME = "YOUR_USERNAME"
+PROJECT = "1"       # Your GitHub project number (as a string)
+ORG = "YOUR_ORG"    # GitHub org or user that owns the project
+
+# CUSTOMIZE: Adjust to match your board's active columns.
+# Only these statuses are queried — items in other columns (e.g., "Done") are skipped.
+SPRINT_STATUSES = ["To Do", "In progress", "Blocked", "In review"]
+
+found = False
+for status in SPRINT_STATUSES:
+    result = subprocess.run(
+        ["gh", "project", "item-list", PROJECT, "--owner", ORG,
+         "--format", "json",
+         "--query", f'assignee:{USERNAME} status:"{status}"'],
+        capture_output=True, text=True
+    )
+
+    if result.returncode != 0:
+        print(f"gh error for status '{status}': {result.stderr.strip()}",
+              file=sys.stderr)
+        continue
+
+    items = json.loads(result.stdout).get("items", [])
+    for item in items:
+        title = item.get("title")
+        url = (item.get("content") or {}).get("url", "n/a")
+        print(f"{status} | {title} | {url}")
+        found = True
+
+if not found:
+    print("No sprint items assigned.")

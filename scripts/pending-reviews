@@ -1,0 +1,35 @@
+#!/usr/bin/env python3
+"""Fetch open PRs assigned to you where you're not the author (= needs review).
+
+Filters out draft PRs, since those aren't ready for review.
+
+CUSTOMIZE: Replace USERNAME with your GitHub username.
+"""
+
+import json
+import subprocess
+import sys
+
+# CUSTOMIZE: Set this to your GitHub username
+USERNAME = "YOUR_USERNAME"
+
+result = subprocess.run(
+    ["gh", "search", "prs", f"--assignee={USERNAME}", "--state=open",
+     "--json", "repository,number,title,author,url,isDraft"],
+    capture_output=True, text=True
+)
+
+if result.returncode != 0:
+    print(f"gh error: {result.stderr.strip()}", file=sys.stderr)
+    sys.exit(1)
+
+prs = json.loads(result.stdout)
+found = False
+for pr in prs:
+    if pr["author"]["login"] != USERNAME and not pr.get("isDraft", False):
+        repo = pr["repository"]["name"]
+        print(f"{repo} #{pr['number']}: {pr['title']} (by {pr['author']['login']}) — {pr['url']}")
+        found = True
+
+if not found:
+    print("No pending PR reviews.")
