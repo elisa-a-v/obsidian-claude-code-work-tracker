@@ -66,19 +66,41 @@ mkdir -p daily sessions tasks meetings
 
 ## 5. Install Claude Code skills
 
-The skills define the three daily routines (morning briefing, session logging, end-of-day). Copy them to your Claude Code skills directory:
+The skills define the three daily routines (morning briefing, session logging, end-of-day). There are two approaches:
+
+**Option A — Copy to Claude Code's directory** (simplest):
 
 ```bash
-# Create the skills directory if it doesn't exist
 mkdir -p ~/.claude/skills
-
-# Copy skills from this repo
 cp -r skills/morning-briefing ~/.claude/skills/
 cp -r skills/session-log ~/.claude/skills/
 cp -r skills/end-of-day ~/.claude/skills/
 ```
 
-## 6. Customize CLAUDE.md
+**Option B — Symlink from the vault** (recommended if you use Obsidian Sync or want skills version-controlled with the vault):
+
+```bash
+ln -s skills .claude/skills
+```
+
+With Option B, skills sync across devices via Obsidian Sync and are committed alongside your vault. On a new machine, you just need to recreate the symlink.
+
+## 6. Set up scripts (optional)
+
+If you use a GitHub project board, the repo includes helper scripts that the morning briefing skill uses to fetch data from GitHub:
+
+- `scripts/sprint-items` — fetches your sprint board items
+- `scripts/pending-reviews` — finds PRs assigned to you for review
+
+Edit each script to set your GitHub username, org, and project number — look for `CUSTOMIZE` comments at the top. Then make them executable:
+
+```bash
+chmod +x scripts/sprint-items scripts/pending-reviews
+```
+
+If you don't use a project board, you can skip this step and remove the corresponding `Command:` lines from the morning briefing skill.
+
+## 7. Customize CLAUDE.md
 
 Open `CLAUDE.md` in the vault root and replace all `[CUSTOMIZE]` placeholders with your own details:
 
@@ -89,7 +111,7 @@ Open `CLAUDE.md` in the vault root and replace all `[CUSTOMIZE]` placeholders wi
 
 The rest of the file (spoons system, communication style, session logging rules) can be used as-is or adjusted to your preferences.
 
-## 7. Customize the morning briefing
+## 8. Customize the morning briefing
 
 Open `~/.claude/skills/morning-briefing/SKILL.md` and look for `<!-- CUSTOMIZE -->` comments:
 
@@ -97,7 +119,7 @@ Open `~/.claude/skills/morning-briefing/SKILL.md` and look for `<!-- CUSTOMIZE -
 - **Project board**: Add your board URL or remove the step if you don't use one.
 - **Standup days**: Change from Mon/Wed/Fri to whatever your team uses.
 
-## 8. Customize the meeting template
+## 9. Customize the meeting template
 
 Open `templates/meeting.md` and replace the example recurring meetings with your actual ones. The presets save time — instead of typing attendees every time, you pick from a list.
 
@@ -107,7 +129,8 @@ Once everything is set up:
 
 1. **Test daily note creation**: Use the Command Palette → "Periodic Notes: Open daily note" — it should create today's note with the full template (meetings table, deadlines, to-do, worklog sections)
 2. **Test the kanban board**: Open `tasks/Tasks.md` — it should render as a drag-and-drop board
-3. **Test Claude Code**: Open a terminal in your vault directory and run `claude`. Try saying "morning briefing" — it should read your daily notes, check GitHub, and give you a summary.
+3. **Test scripts** (if configured): Run `scripts/sprint-items` and `scripts/pending-reviews` from the vault root — they should return results or "No items" messages, not errors.
+4. **Test Claude Code**: Open a terminal in your vault directory and run `claude`. Try saying "morning briefing" — it should read your daily notes, check GitHub, and give you a summary.
 
 ## Daily usage
 

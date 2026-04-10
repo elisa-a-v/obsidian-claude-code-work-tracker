@@ -66,7 +66,7 @@ The AI isn't the system — it's what makes the system sustainable. The real wor
 
 ## What a day looks like
 
-**Morning**: Open a conversation and say "morning briefing." Claude reads your recent logs, checks your code review queue, scans the project board, and gives you a summary. On standup days, it drafts a standup message you can edit and post. It suggests what to start with.
+**Morning**: Open a conversation and say "morning briefing." Claude reads your recent logs, checks your code review queue, scans the project board, and gives you a summary. It writes agreed-upon goals into CLAUDE.md so both you and Claude can reference them throughout the day. On standup days, it drafts a standup message you can edit and post.
 
 **During work**: As you do things — review a PR, have a meeting, make a decision — you either log it yourself or tell Claude to capture it. Session logs are timestamped entries that track what happened, what files were involved, and what's still open. If you switch to a new Claude conversation (they don't last forever), the session log carries the context forward.
 
@@ -99,6 +99,9 @@ skills/
   morning-briefing/     — Morning check-in routine
   session-log/          — Timestamped work capture throughout the day
   end-of-day/           — End-of-day wrap-up routine
+scripts/
+  sprint-items          — Fetch sprint board items from GitHub Projects
+  pending-reviews       — Find PRs assigned to you for review
 tasks/
   Tasks.md              — Example kanban board
 examples/
