@@ -28,13 +28,16 @@ Help the user start their work day by orienting them on where they left off and 
         This example uses assignee as the signal — adapt to your team's workflow
         (e.g., review-requested, labels, etc.) -->
    - Find open PRs where you are assigned but NOT the author
+   - Draft PRs are NOT waiting for review — skip them
    - Check across your repositories
    - These are often top priority — list them in the standup "Today" section
+   - Command: `scripts/pending-reviews` (run from vault root)
 
 3. **MUST check project board** from GitHub (if applicable):
    <!-- CUSTOMIZE: Replace with your project board URL, or remove if you don't use one -->
    - Identify items assigned to you
    - Note priorities and deadlines if visible
+   - Command: `scripts/sprint-items` (run from vault root)
 
 4. **MUST check the task board**:
    - Path: `tasks/Tasks.md`
@@ -56,12 +59,19 @@ Help the user start their work day by orienting them on where they left off and 
    - SHOULD show relevant project board items and task board items
    - MUST end with a clear suggestion: "I'd suggest starting with X because..."
 
-7. **SHOULD help with decision paralysis**:
+7. **MUST update today's goals in CLAUDE.md**:
+   - After synthesizing the briefing, write the agreed-upon goals into the `**Today's goals:**` section in CLAUDE.md
+   - Replace the existing content (whether placeholder or previous day's goals) with today's goals as a numbered list
+   - Keep it to 2-4 concrete items — these are the "staying on track" anchors for the day
+   - If on a no-spoons day, write a single goal
+   - These goals come from the synthesis in step 6: pending reviews, sprint work, continuations, quick wins
+
+8. **SHOULD help with decision paralysis**:
    - If there are many options, SHOULD help narrow down to 1-2 concrete next steps
    - Consider: urgency, quick wins for momentum, blocked items to unblock
    - MAY ask if the user wants help getting started on the chosen task
 
-8. **MUST generate standup draft** (on standup days only):
+9. **MUST generate standup draft** (on standup days only):
    <!-- CUSTOMIZE: Adjust the days to match your team's standup schedule.
         This example uses Monday, Wednesday, Friday. -->
    - MUST check if today is a standup day (Mon, Wed, Fri)
@@ -86,13 +96,15 @@ Help the user start their work day by orienting them on where they left off and 
    - MUST tell the user where to find it
 
    **Standup framing guidance:**
-   - Only include work visible to the team (PRs, issues, code reviews, feature work). Exclude: internal planning, personal tooling/workflow tweaks, vault management
-   - Keep it simple — only what the team needs to know
+   - Keep it simple — only what the team needs to know, nothing more
    - 2-4 items max per section; combine related work into single lines
    - Short descriptions — brief outcome, not a detailed breakdown
+   - Don't include internal process details (internal tracking systems, chat messages, session management)
+   - Only include work visible to the team: PRs, issues, code reviews, feature work. Exclude: internal planning not yet shared with the team, personal tooling/workflow tweaks, vault/session management
+   - Don't over-describe PRs — a short summary is enough, skip if the PR title says it all
    - Frame in terms of outcomes/impact, not activities
-   - Consider audience context — what matters to the team vs what only matters to you
-   - Before finalizing, check for gaps or stale info. If uncertain about something specific, ask ONE focused, easy-to-answer question rather than guessing
+   - Consider audience context — don't mention things they already know (e.g., meetings they attended)
+   - Before finalizing, check for gaps or stale info. If uncertain about something specific (blockers, priorities, what's current), ask ONE focused, easy-to-answer question rather than guessing
 
 ## Tone
 
